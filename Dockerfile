@@ -12,4 +12,4 @@ RUN go build -o /go/bin/main
 # Copy our static executable.
 #COPY --from=builder /go/bin/main /go/bin/main
 # Run the main binary.
-ENTRYPOINT ["/go/bin/main"]
+ENTRYPOINT ["/go/bin/main", "-kubeconfig=$HOME/.kube/config"]
